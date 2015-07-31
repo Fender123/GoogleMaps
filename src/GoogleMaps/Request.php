@@ -207,7 +207,7 @@ class Request
 	/**
 	 * @param string $key
 	 */
-	private function setKey($key)
+	public function setKey($key)
 	{
 	    $this->key = $key;
 	}
