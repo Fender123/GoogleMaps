@@ -84,6 +84,13 @@ class Request
 	protected $signature;
 	
 	/**
+	 * API key
+	 * 
+	 * @var string
+	 */
+	protected $key;
+	
+	/**
 	 * Contructor
 	 * 
 	 * @param boolean $sensor
@@ -188,6 +195,22 @@ class Request
 	{
 	    $this->signature = $signature;
 	}
+	
+	/**
+	 * @return string
+	 */
+	public function getKey()
+	{
+	    return $this->key;
+	}
+	
+	/**
+	 * @param string $key
+	 */
+	private function setKey($key)
+	{
+	    $this->key = $key;
+	}
 
 	/**
 	 * @return the $region
@@ -282,7 +305,7 @@ class Request
 	public function getUrlParameters()
 	{
 		$requiredParameters = array('address', 'latlng', 'components', 'sensor');
-		$optionalParameters = array('bounds', 'language', 'client', 'signature', 'region');
+		$optionalParameters = array('bounds', 'language', 'client', 'signature', 'region', 'key');
 	
 		$url = '';
 		foreach ($requiredParameters as $parameter) {
