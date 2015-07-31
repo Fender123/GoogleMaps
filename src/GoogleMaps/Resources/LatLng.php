@@ -37,7 +37,7 @@ class LatLng implements ArraySerializableInterface
 	}
 	
 	/**
-	 * @return the $lat
+	 * @return float $lat
 	 */
 	public function getLat() 
 	{
@@ -45,7 +45,7 @@ class LatLng implements ArraySerializableInterface
 	}
 
 	/**
-	 * @return the $lng)
+	 * @return float $lng
 	 */
 	public function getLng() 
 	{

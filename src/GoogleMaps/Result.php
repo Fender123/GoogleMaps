@@ -15,6 +15,7 @@ use GoogleMaps\Resources\Geometry;
 
 use GoogleMaps\Resources\AddressComponentSet;
 
+use mageekguy\atoum\asserters\boolean;
 use Zend\Stdlib\ArraySerializableInterface;
 
 class Result implements ArraySerializableInterface
@@ -55,7 +56,7 @@ class Result implements ArraySerializableInterface
 	}
 	
 	/**
-	 * @return the $addressComponents
+	 * @return AddressComponentSet $addressComponents
 	 */
 	public function getAddressComponents() 
 	{
@@ -63,7 +64,7 @@ class Result implements ArraySerializableInterface
 	}
 
 	/**
-	 * @return the $formattedAddress
+	 * @return string $formattedAddress
 	 */
 	public function getFormattedAddress() 
 	{
@@ -71,7 +72,7 @@ class Result implements ArraySerializableInterface
 	}
 
 	/**
-	 * @return the $geometry
+	 * @return Geometry $geometry
 	 */
 	public function getGeometry() 
 	{
@@ -79,7 +80,7 @@ class Result implements ArraySerializableInterface
 	}
 
 	/**
-	 * @return the $types
+	 * @return array $types
 	 */
 	public function getTypes() 
 	{
@@ -87,7 +88,7 @@ class Result implements ArraySerializableInterface
 	}
 	
 	/**
-	 * @return the $partialMatch
+	 * @return boolean $partialMatch
 	 */
 	public function getPartialMatch() 
 	{

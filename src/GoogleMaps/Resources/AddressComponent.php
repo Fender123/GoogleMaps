@@ -72,7 +72,7 @@ class AddressComponent implements ArraySerializableInterface
 	}
 	
 	/**
-	 * @return the $longName
+	 * @return string $longName
 	 */
 	public function getLongName() 
 	{
@@ -80,7 +80,7 @@ class AddressComponent implements ArraySerializableInterface
 	}
 
 	/**
-	 * @return the $shortName
+	 * @return string $shortName
 	 */
 	public function getShortName() 
 	{
@@ -88,7 +88,7 @@ class AddressComponent implements ArraySerializableInterface
 	}
 
 	/**
-	 * @return the $types
+	 * @return string $types
 	 */
 	public function getTypes() 
 	{

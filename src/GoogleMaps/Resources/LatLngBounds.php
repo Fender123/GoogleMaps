@@ -38,7 +38,7 @@ class LatLngBounds implements ArraySerializableInterface
 	}
 	
 	/**
-	 * @return the $southwest
+	 * @return LatLng $southwest
 	 */
 	public function getSouthwest()
 	{
@@ -49,7 +49,7 @@ class LatLngBounds implements ArraySerializableInterface
 	}
 
 	/**
-	 * @return the $northeast
+	 * @return LatLng $northeast
 	 */
 	public function getNortheast() 
 	{

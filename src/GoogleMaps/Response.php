@@ -33,7 +33,7 @@ class Response
 	protected $rawBody;
 	
 	/**
-	 * @return the $status
+	 * @return string $status
 	 */
 	public function getStatus() 
 	{
@@ -49,7 +49,7 @@ class Response
 	}
 
 	/**
-	 * @return the $results
+	 * @return ResultSet $results
 	 */
 	public function getResults() 
 	{
@@ -66,7 +66,7 @@ class Response
 	
 	/**
 	 * 
-	 * @return the $rawBody
+	 * @return string $rawBody
 	 */
 	public function getRawBody() 
 	{

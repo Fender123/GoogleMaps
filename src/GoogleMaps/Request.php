@@ -10,10 +10,11 @@
 namespace GoogleMaps;
 
 use GoogleMaps\Parameters\ComponentSetParameter;
-
 use GoogleMaps\Parameters\LatLngBoundsParameter;
-
 use GoogleMaps\Parameters\LatLngParameter;
+use GoogleMaps\Resources\LatLng;
+use GoogleMaps\Resources\LatLngBounds;
+use mageekguy\atoum\tests\units\asserters\boolean;
 
 class Request
 {
@@ -89,11 +90,11 @@ class Request
 	 * @var string
 	 */
 	protected $key;
-	
+
 	/**
 	 * Contructor
-	 * 
-	 * @param boolean $sensor
+	 *
+	 * @param bool|string $sensor
 	 */
 	public function __construct($sensor = self::NO_SENSOR)
 	{
@@ -101,7 +102,7 @@ class Request
 	}
 	
 	/**
-	 * @return the $address
+	 * @return string $address
 	 */
 	public function getAddress() 
 	{
@@ -117,7 +118,7 @@ class Request
 	}
 
 	/**
-	 * @return the $latLng
+	 * @return LatLng $latLng
 	 */
 	public function getLatLng() 
 	{
@@ -133,7 +134,7 @@ class Request
 	}
 
 	/**
-	 * @return the $bounds
+	 * @return LatLngBounds $bounds
 	 */
 	public function getBounds() 
 	{
@@ -149,7 +150,7 @@ class Request
 	}
 
 	/**
-	 * @return the $language
+	 * @return string $language
 	 */
 	public function getLanguage() 
 	{
@@ -213,7 +214,7 @@ class Request
 	}
 
 	/**
-	 * @return the $region
+	 * @return string $region
 	 */
 	public function getRegion() 
 	{
@@ -229,7 +230,7 @@ class Request
 	}
 	
 	/**
-	 * @return the $components
+	 * @return ComponentSetParameter $components
 	 */
 	public function getComponents() 
 	{
@@ -237,7 +238,7 @@ class Request
 	}
 
 	/**
-	 * @param \GoogleMaps\unknown_type $componentsFilter
+	 * @param ComponentSetParameter $components
 	 */
 	public function setComponents(ComponentSetParameter $components) 
 	{
@@ -245,7 +246,7 @@ class Request
 	}
 
 	/**
-	 * @return the $sensor
+	 * @return boolean $sensor
 	 */
 	public function getSensor() 
 	{

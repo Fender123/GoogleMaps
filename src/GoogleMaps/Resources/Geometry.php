@@ -31,7 +31,7 @@ class Geometry implements ArraySerializableInterface
 	}
 	
 	/**
-	 * @return the $bounds
+	 * @return LatLngBounds $bounds
 	 */
 	public function getBounds() 
 	{
@@ -39,7 +39,7 @@ class Geometry implements ArraySerializableInterface
 	}
 
 	/**
-	 * @return the $location
+	 * @return LatLng $location
 	 */
 	public function getLocation() 
 	{
@@ -47,7 +47,7 @@ class Geometry implements ArraySerializableInterface
 	}
 
 	/**
-	 * @return the $locationType
+	 * @return string $locationType
 	 */
 	public function getLocationType() 
 	{
@@ -55,7 +55,7 @@ class Geometry implements ArraySerializableInterface
 	}
 
 	/**
-	 * @return the $viewport
+	 * @return LatLngBounds $viewport
 	 */
 	public function getViewport() 
 	{
