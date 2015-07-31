@@ -2,7 +2,7 @@
 /**
  * This file is part of Geoxygen
  *
- * (c) 2012 Cédric DERUE <cedric.derue@gmail.com>
+ * (c) 2012 CÃ©dric DERUE <cedric.derue@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -32,6 +32,13 @@ class Geocoder
 	 * @var string
 	 */
 	protected $format;
+		
+	/**
+	 * Language of the request
+	 *
+	 * @var string
+	 */
+	protected $language;
 	
 	/**
 	 * Http client
@@ -65,6 +72,14 @@ class Geocoder
 	{
 		return $this->format;
 	}
+	
+	public function getLanguage() {
+		return $this->language;
+	}
+	public function setLanguage($language) {
+		$this->language = $language;
+		return $this;
+	}
 
 	/**
 	 * Get the HttpClient instance
@@ -93,6 +108,7 @@ class Geocoder
 			throw new Exception\InvalidArgumentException('request');
 		}
 		$uri = new Uri();
+		$uri->setScheme('https');
 		$uri->setHost(self::GOOGLE_MAPS_APIS_URL);
 		$uri->setPath(self::GOOGLE_GEOCODING_API_PATH);
 		
@@ -105,6 +121,9 @@ class Geocoder
 		$client = $this->getHttpClient();
 		$client->resetParameters();
 		$client->setUri($uri->toString());
+		if ($this->getLanguage()){
+			$client->setHeaders(array('Accept-Language' => $this->getLanguage()));
+		}
 		$stream = $client->send();
 		
 		$body = Json::decode($stream->getBody(), Json::TYPE_ARRAY);
